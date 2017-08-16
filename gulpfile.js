@@ -25,6 +25,7 @@ var path = {
         FONT: 'src/fonts/*',
         LESS: ['src/less/*.less', '!src/less/variable.less'],
         IMAGES: 'src/images/*.{png,jpg,gif,ico}',
+        VERSION: 'src/map/',
     },
     DIST: {
         ROOT: 'dist/',
@@ -32,8 +33,7 @@ var path = {
         JS: 'dist/',
         CSS: 'dist/css/',
         FONT: 'dist/fonts/',
-        IMAGES: 'dist/images/',
-        VERSION: 'dist/map/',
+        IMAGES: 'dist/images/'
     },
     BUILD: {
         ROOT: 'build/',
@@ -41,8 +41,7 @@ var path = {
         JS: 'build/',
         CSS: 'build/css/',
         FONT: 'build/fonts/',
-        IMAGES: 'build/images/',
-        VERSION: 'build/map/',
+        IMAGES: 'build/images/'
     },
 };
 
@@ -91,28 +90,28 @@ gulp.task('build_rev_css', function () {
     return gulp.src(path.BUILD.CSS + '*.css')
         .pipe(rev())
         .pipe(rev.manifest())
-        .pipe(gulp.dest(path.BUILD.VERSION + 'css'));
+        .pipe(gulp.dest(path.SRC.VERSION + 'css'));
 });
 
 gulp.task('build_rev_js', function () {
     return gulp.src(path.BUILD.JS + '*.js')
         .pipe(rev())
         .pipe(rev.manifest())
-        .pipe(gulp.dest(path.BUILD.VERSION + 'js'));
+        .pipe(gulp.dest(path.SRC.VERSION + 'js'));
 });
 
 gulp.task('dist_rev_css', function () {
     return gulp.src(path.DIST.CSS + '*.css')
         .pipe(rev())
         .pipe(rev.manifest())
-        .pipe(gulp.dest(path.DIST.VERSION + 'css'));
+        .pipe(gulp.dest(path.SRC.VERSION + 'css'));
 });
 
 gulp.task('dist_rev_js', function () {
     return gulp.src(path.DIST.JS + '*.js')
         .pipe(rev())
         .pipe(rev.manifest())
-        .pipe(gulp.dest(path.DIST.VERSION + 'js'));
+        .pipe(gulp.dest(path.SRC.VERSION + 'js'));
 });
 
 gulp.task('build_html', function () {
@@ -140,14 +139,14 @@ gulp.task('build_rev_html', function () {
     return gulp.src(path.BUILD.HTML + '*.html')
         .pipe(rev())
         .pipe(rev.manifest())
-        .pipe(gulp.dest(path.BUILD.VERSION + 'html'));
+        .pipe(gulp.dest(path.SRC.VERSION + 'html'));
 });
 
 gulp.task('dist_rev_html', function () {
     return gulp.src(path.DIST.HTML + '*.html')
         .pipe(rev())
         .pipe(rev.manifest())
-        .pipe(gulp.dest(path.DIST.VERSION + 'html'));
+        .pipe(gulp.dest(path.SRC.VERSION + 'html'));
 });
 
 gulp.task('build_replace_html', function () {
@@ -173,8 +172,8 @@ gulp.task('rev_image', function () {
     return gulp.src(path.SRC.IMAGES)
         .pipe(rev())
         .pipe(rev.manifest())
-        .pipe(gulp.dest(path.BUILD.VERSION + 'images'))
-        .pipe(gulp.dest(path.DIST.VERSION + 'images'));
+        .pipe(gulp.dest(path.SRC.VERSION + 'images'))
+        .pipe(gulp.dest(path.SRC.VERSION + 'images'));
 });
 
 gulp.task('font', function () {
@@ -187,8 +186,8 @@ gulp.task('rev_font', function () {
     return gulp.src(path.SRC.FONT)
         .pipe(rev())
         .pipe(rev.manifest())
-        .pipe(gulp.dest(path.BUILD.VERSION + 'fonts'))
-        .pipe(gulp.dest(path.DIST.VERSION + 'fonts'));
+        .pipe(gulp.dest(path.SRC.VERSION + 'fonts'))
+        .pipe(gulp.dest(path.SRC.VERSION + 'fonts'));
 });
 
 gulp.task('test', function (done) {
