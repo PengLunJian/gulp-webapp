@@ -1,6 +1,6 @@
 /**
  * This is gulp config file
- * Created by PengLunJian on 2017-08-09.
+ * Created by PengLunJian on 2017-08-16.
  */
 var gulp = require('gulp');
 var rev = require('gulp-rev');
@@ -20,33 +20,28 @@ var revCollector = require('gulp-rev-collector');
 var path = {
     SRC: {
         ROOT: 'src/',
-        JS: 'src/js/*.js',
+        JS: 'src/**/*.js',
         HTML: 'src/*.html',
         FONT: 'src/fonts/*',
-        LESS: 'src/less/*.less',
-        ICONFONT: 'src/iconfont/*',
+        LESS: ['src/less/*.less', '!src/less/variable.less'],
         IMAGES: 'src/images/*.{png,jpg,gif,ico}',
     },
     DIST: {
         ROOT: 'dist/',
         HTML: 'dist/',
-        JS: 'dist/js/',
+        JS: 'dist/',
         CSS: 'dist/css/',
         FONT: 'dist/fonts/',
         IMAGES: 'dist/images/',
-        ICONFONT: 'dist/iconfont/',
-
         VERSION: 'dist/map/',
     },
     BUILD: {
         ROOT: 'build/',
         HTML: 'build/',
-        JS: 'build/js/',
+        JS: 'build/',
         CSS: 'build/css/',
         FONT: 'build/fonts/',
         IMAGES: 'build/images/',
-        ICONFONT: 'build/iconfont/',
-
         VERSION: 'build/map/',
     },
 };
@@ -54,7 +49,9 @@ var path = {
 gulp.task('clean', function () {
     var url = [
         path.DIST.ROOT + '*',
-        path.BUILD.ROOT + '*'
+        path.BUILD.ROOT + '*',
+        '!' + path.DIST.ROOT + '.gitkeep',
+        '!' + path.BUILD.ROOT + '.gitkeep'
     ];
     return gulp.src(url, {read: false})
         .pipe(clean())
@@ -194,28 +191,13 @@ gulp.task('rev_font', function () {
         .pipe(gulp.dest(path.DIST.VERSION + 'fonts'));
 });
 
-gulp.task('iconfont', function () {
-    return gulp.src(path.SRC.ICONFONT)
-        .pipe(gulp.dest(path.BUILD.ICONFONT))
-        .pipe(gulp.dest(path.DIST.ICONFONT));
-});
-
-gulp.task('rev_iconfont', function () {
-    return gulp.src(path.SRC.ICONFONT)
-        .pipe(rev())
-        .pipe(rev.manifest())
-        .pipe(gulp.dest(path.BUILD.VERSION + 'iconfont'))
-        .pipe(gulp.dest(path.DIST.VERSION + 'iconfont'));
-});
-
 gulp.task('test', function (done) {
     runSequence(
         'build_less', 'build_js',
         'build_html', 'build_rev_css',
         'build_rev_js', 'build_rev_html',
-        'build_replace_html', 'font',
-        // 'rev_image', 'min_image',
-        'rev_font', 'iconfont', 'rev_iconfont',
+        'build_replace_html', 'font', 'rev_font',
+        'rev_image', 'min_image',
         done);
 });
 
@@ -226,7 +208,6 @@ gulp.task('dist', function (done) {
         'dist_rev_js', 'dist_rev_html',
         'dist_replace_html', 'min_image',
         'rev_image', 'font', 'rev_font',
-        'iconfont', 'rev_iconfont',
         done);
 });
 
@@ -236,8 +217,7 @@ gulp.task('watch', function () {
         path.SRC.LESS,
         path.SRC.JS,
         path.SRC.FONT,
-        path.SRC.IMAGES,
-        path.SRC.ICONFONT
+        path.SRC.IMAGES
     ], ['test']);
     console.log("WATCH SUCCESS!");
 });
