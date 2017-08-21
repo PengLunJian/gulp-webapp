@@ -162,9 +162,7 @@ function Lazyload() {
     var arguments = arguments.length != 0 ? arguments[0] : arguments;
     this.lazyCount = arguments['lazyCount'] ? arguments['lazyCount'] : 5;
     this.lazyTimer = arguments['lazyTimer'] ? arguments['lazyTimer'] : null;
-    this.lazyLoadImg = arguments['lazyLoadImg'] ? arguments['lazyLoadImg'] : "images/loading.png";
-    this.lazyElement = arguments['lazyElement'] ? arguments['lazyElement'] : 'img[src="' + this.lazyLoadImg + '"]';
-
+    this.lazyLabel = arguments['lazyLabel'] ? arguments['lazyLabel'] : 'img[data-loaded="false"]';
     this.init();
 }
 /**
@@ -186,7 +184,7 @@ Lazyload.prototype.init = function () {
 Lazyload.prototype.lazyload = function () {
     var _this = this;
     this.lazyTimer = setInterval(function () {
-        $(_this.lazyElement).each(function () {
+        $(_this.lazyLabel).each(function () {
             var _that = this;
             this.iWidth = $(window).outerWidth();
             this.iHeight = $(window).outerHeight();
@@ -205,12 +203,67 @@ Lazyload.prototype.lazyload = function () {
                     $(_that).animate({"opacity": 1}, 300);
                     _that.tempImgObj = null;
                 });
-                $(this.tempImgObj).on("error", function () {
-                    $(_that).attr("data-loaded", "true");
-                    _that.tempImgObj = null;
-                });
             }
         });
     }, 100);
+    return this;
+}
+/**
+ * BEGIN 编写新闻滚动插件
+ * Author:PengLunJian
+ * Date:2017-08-18
+ * @constructor 构造函数
+ */
+function NewsComponent() {
+    var arguments = arguments.length != 0 ? arguments[0] : arguments;
+    this.rate = arguments['rate'] ? arguments['rate'] : 3000;
+    this.timer = arguments['timer'] ? arguments['timer'] : null;
+    this.element = arguments['element'] ? arguments['element'] : '.news-block';
+
+    this.init();
+}
+/**
+ * BEGIN 初始化新闻滚动插件
+ * Author:PengLunJian
+ * Date:2017-08-18
+ * @returns {NewsComponent} 返回当前对象实现连缀调用
+ */
+NewsComponent.prototype.init = function () {
+    this.startMove();
+    return this;
+}
+/**
+ * BEGIN 设置新闻插件位移
+ * Author:PengLunJian
+ * Date:2017-08-18
+ * @returns {NewsComponent} 返回当前对象实现连缀调用
+ */
+NewsComponent.setTranslateY = function () {
+    return this;
+}
+/**
+ * BEGIN 开始新闻插件动画
+ * Author:PengLunJian
+ * Date:2017-08-18
+ * @returns {NewsComponent} 返回当前对象实现连缀调用
+ */
+NewsComponent.prototype.startMove = function () {
+    var _this = this;
+    _this.value = 0;
+    _this.html = $(this.element).html();
+    _this.length = 2 * $(this.element).children().length;
+    $(this.element).html(_this.html + _this.html);
+    this.timer = setInterval(function () {
+        _this.value = Math.round(10 * (_this.value + 0.4)) / 10;
+        _this.style = 'transform:translateY(' + (-_this.value) + 'rem);';
+        $(_this.element).attr('style', _this.style);
+        if (_this.value >= 0.4 * _this.length / 2) {
+            setTimeout(function () {
+                _this.value = 0;
+                _this.style = 'transform:translateY(' + (-_this.value) + 'rem);transition:none;';
+                $(_this.element).attr("style", _this.style);
+            }, 400);
+        }
+    }, _this.rate);
     return this;
 }

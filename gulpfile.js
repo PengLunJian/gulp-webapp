@@ -25,7 +25,7 @@ var path = {
         FONT: 'src/fonts/*',
         LESS: ['src/less/*.less', '!src/less/variable.less'],
         IMAGES: 'src/images/*.{png,jpg,gif,ico}',
-        VERSION: 'src/map/',
+        VERSION: 'src/rev/',
     },
     DIST: {
         ROOT: 'dist/',
@@ -38,7 +38,7 @@ var path = {
     BUILD: {
         ROOT: 'build/',
         HTML: 'build/',
-        JS: 'build/js',
+        JS: 'build/',
         CSS: 'build/css/',
         FONT: 'build/fonts/',
         IMAGES: 'build/images/'
@@ -87,14 +87,10 @@ gulp.task('dist_js', function () {
 });
 
 gulp.task('build_rev_css', function () {
-    var revPath = [
-        path.BUILD.JS + '*.js',
-        path.BUILD.CSS + '*.css'
-    ];
     return gulp.src(path.BUILD.CSS + '*.css')
         .pipe(rev())
         .pipe(rev.manifest())
-        .pipe(gulp.dest('/'));
+        .pipe(gulp.dest(path.SRC.VERSION + 'css'));
 });
 
 gulp.task('build_rev_js', function () {
@@ -154,13 +150,13 @@ gulp.task('dist_rev_html', function () {
 });
 
 gulp.task('build_replace_html', function () {
-    return gulp.src(['src/**/*.json', 'src/*.html'])
+    return gulp.src(['src/rev/**/*.json', 'src/*.html'])
         .pipe(revCollector())
         .pipe(gulp.dest(path.BUILD.HTML));
 });
 
 gulp.task('dist_replace_html', function () {
-    return gulp.src(['src/**/*.json', 'src/*.html'])
+    return gulp.src(['src/rev/**/*.json', 'src/*.html'])
         .pipe(revCollector())
         .pipe(gulp.dest(path.DIST.HTML));
 });
@@ -200,7 +196,7 @@ gulp.task('test', function (done) {
         'build_html', 'build_rev_css',
         'build_rev_js', 'build_rev_html',
         'build_replace_html', 'font', 'rev_font',
-        'rev_image', 'min_image',
+        'rev_image', //'min_image',
         done);
 });
 
