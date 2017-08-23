@@ -243,6 +243,7 @@ col-lg-3 {
   position: fixed;
   left: 0px;
   bottom: 0px;
+  z-index: 1000;
   text-align: center;
   background-color: #ffffff;
   -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
@@ -304,17 +305,13 @@ col-lg-3 {
 .footer .footer-column:nth-child(5).active {
   background-image: url("../images/me1@2x.png");
 }
-.home {
-  min-height: 100vh;
-  padding-bottom: 0.7rem;
-}
-.home .banner img {
+.banner img {
   height: 1.2rem;
 }
-.home .banner .swiper-pagination {
+.banner .swiper-pagination {
   font-size: 0px;
 }
-.home .banner .swiper-pagination-bullet {
+.banner .swiper-pagination-bullet {
   width: 0.08rem;
   height: 0.08rem;
   margin: 0rem 0.04rem;
@@ -322,8 +319,12 @@ col-lg-3 {
   -moz-border-radius: 100%;
   border-radius: 100%;
 }
-.home .banner .swiper-pagination-bullet-active {
+.banner .swiper-pagination-bullet-active {
   background-color: #ffffff;
+}
+.home {
+  min-height: 100vh;
+  padding-bottom: 0.7rem;
 }
 .home .menus {
   text-align: center;
@@ -472,18 +473,14 @@ col-lg-3 {
   -moz-border-radius: 0.04rem;
   border-radius: 0.04rem;
 }
-.list {
-  min-height: 100vh;
-  padding-bottom: 0.66rem;
-}
-.list .header {
+.header {
   height: 0.45rem;
   position: relative;
   text-align: center;
   line-height: 0.45rem;
   background-color: #3f81cc;
 }
-.list .header .close {
+.header .close {
   position: absolute;
   top: 0px;
   left: 0.02rem;
@@ -494,10 +491,14 @@ col-lg-3 {
   background-position: center center;
   background-image: url("../images/close@2x.png");
 }
-.list .header .title {
+.header .title {
   color: #ffffff;
   font-size: 0.18rem;
   font-weight: normal;
+}
+.list {
+  min-height: 100vh;
+  padding-bottom: 0.66rem;
 }
 .list .section .label {
   display: block;
@@ -555,6 +556,43 @@ col-lg-3 {
 .list .section .product .product-info .product-addr {
   font-size: 0.15rem;
 }
+.list .section .product .product-info .product-group {
+  position: relative;
+  padding-right: 1.54rem;
+}
+.list .section .product .product-info .product-label {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 1.54rem;
+  font-size: 0.09rem;
+  line-height: 0.18rem;
+}
+.list .section .product .product-info .product-label-ls {
+  float: left;
+  border-style: solid;
+  padding: 0px 0.05rem;
+  border-width: 0.01rem;
+  margin-right: 0.05rem;
+  -webkit-border-radius: 0.03rem;
+  -moz-border-radius: 0.03rem;
+  border-radius: 0.03rem;
+}
+.list .section .product .product-info .product-label-ls:nth-child(1) {
+  color: #e87937;
+  border-color: #e87937;
+}
+.list .section .product .product-info .product-label-ls:nth-child(2) {
+  color: #55a993;
+  border-color: #55a993;
+}
+.list .section .product .product-info .product-label-ls:nth-child(3) {
+  color: #3f81cc;
+  border-color: #3f81cc;
+}
+.list .section .product .product-info .product-label-ls:last-child {
+  margin-right: 0px;
+}
 .list .footer {
   padding: 0.1rem 0.15rem;
   border-top: 1px solid #e1e1e1;
@@ -567,4 +605,64 @@ col-lg-3 {
   -webkit-border-radius: 0.05rem;
   -moz-border-radius: 0.05rem;
   border-radius: 0.05rem;
+}
+.club {
+  min-height: 100vh;
+  padding-bottom: 0.7rem;
+}
+.club .tab-bar {
+  color: #636365;
+  position: relative;
+  font-size: 0.14rem;
+  text-align: center;
+  line-height: 0.4rem;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e1e1e1;
+}
+.club .tab-bar .tab:after {
+  content: '';
+  margin-left: 0.04rem;
+  display: inline-block;
+  vertical-align: middle;
+  border-top: 0.06rem solid #afafaf;
+  border-left: 0.04rem solid transparent;
+  border-right: 0.04rem solid transparent;
+}
+.club .tab-bar:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  height: 0.18rem;
+  margin-top: -0.09rem;
+  margin-left: -0.005rem;
+  border-left: 1px solid #e1e1e1;
+}
+.club .items {
+  padding: 0.05rem;
+}
+.club .item {
+  padding: 0.05rem;
+}
+.club .item a {
+  background-color: #ffffff;
+  -webkit-box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.15);
+}
+.club .item .item-img {
+  height: 1.25rem;
+}
+.club .item .item-info {
+  line-height: 0.2rem;
+  padding: 0.13rem 0.1rem;
+}
+.club .item .item-info .item-title {
+  font-size: 0.17rem;
+  margin-bottom: 0.05rem;
+}
+.club .item .item-info .item-desc {
+  color: #636363;
+  font-size: 0.12rem;
 }
