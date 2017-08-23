@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>下单</title>
+    <link href="css/swiper-3.3.1.min.css" rel="stylesheet" type="text/css">
+    <link href="css/font.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="order">
+    <!------ 页头标题区 ------>
+    <div class="header">
+        <a href="#" class="back"></a>
+        <h1 class="title">个人件</h1>
+    </div>
+    <!------ 快件选择区 ------>
+    <div class="group">
+        <ul class="express row">
+            <li class="exp-item col-xs-3 active">
+                <a href="javascript:void(0);">国内快递</a>
+            </li>
+            <li class="exp-item col-xs-3">
+                <a href="javascript:void(0);">国际快递</a>
+            </li>
+            <li class="exp-item col-xs-3">
+                <a href="javascript:void(0);">同城件</a>
+            </li>
+            <li class="exp-item col-xs-3">
+                <a href="javascript:void(0);">物流件</a>
+            </li>
+        </ul>
+    </div>
+    <!------ 选择快递区 ------>
+    <div class="group">
+        <div class="company">
+            <h2 class="title">选择快递公司</h2>
+            <div class="comp row">
+                <div class="col-xs-4 active">
+                    <div class="comp-item">
+                        <div class="item-img">
+                            <img src="images/loading.png" alt="顺丰标准"/>
+                        </div>
+                        <div class="item-info">
+                            <h3 class="item-title">顺丰标准</h3>
+                            <em class="item-price">¥22.00</em>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="comp-item">
+                        <div class="item-img">
+                            <img src="images/loading.png" alt="圆通快递"/>
+                        </div>
+                        <div class="item-info">
+                            <h3 class="item-title">圆通快递</h3>
+                            <em class="item-price">¥12.00</em>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="comp-item">
+                        <div class="item-img">
+                            <img src="images/loading.png" alt="顺丰标准"/>
+                        </div>
+                        <div class="item-info">
+                            <h3 class="item-title">顺丰标准</h3>
+                            <em class="item-price">¥22.00</em>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!------ 底部支付区 ------>
+    <div class="footer">
+        <div class="pull-left">
+            <label>运费：</label><em class="price">¥32.00</em>
+        </div>
+        <div class="pull-right">
+            <a class="btn submit">提交订单</a>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<script type="text/javascript" src="libs/jquery.min.js"></script>
+<script type="text/javascript" src="libs/swiper-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/tools.js.js"></script>
+<script type="text/javascript" src="js/order.page.js"></script>
+</body>
+</html>
