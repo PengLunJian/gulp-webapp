@@ -8,7 +8,7 @@
     <title>下单</title>
     <link href="css/swiper-3.3.1.min.css?v=1e85f8af85" rel="stylesheet" type="text/css">
     <link href="css/font.css?v=240b33bd01" rel="stylesheet" type="text/css">
-    <link href="css/style.css?v=1523ed482d" rel="stylesheet" type="text/css">
+    <link href="css/style.css?v=86ff0c4a96" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div class="order">
@@ -34,12 +34,95 @@
             </li>
         </ul>
     </div>
+    <!------ 收寄信息区 ------>
+    <div class="group">
+        <div class="address">
+            <div class="addr-item">
+                <a href="javascript:void(0);">
+                    <p class="addr-line ellipsis">郭天天 18717747137</p>
+                    <p class="addr-line ellipsis">上海小马驿站科技有限公司</p>
+                    <p class="addr-line ellipsis">上海市闸北区广中路788号上海大学国家软</p>
+                    <i class="addr-split"></i>
+                </a>
+            </div>
+            <div class="addr-item">
+                <a href="javascript:void(0);">
+                    <p class="addr-line ellipsis">郭天天 18717747137</p>
+                    <p class="addr-line ellipsis">上海小马驿站科技有限公司</p>
+                    <p class="addr-line ellipsis">上海市闸北区广中路788号上海大学国家软</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!------ 快递信息区 ------>
+    <div class="group">
+        <div class="params">
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label class="form-label">包裹</label>
+                        <input class="form-input" id="wrap" type="text" value="文件"/>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label class="form-label">重量</label>
+                        <input class="form-input" id="weight" type="text" value="kg"/>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label class="form-label">到付</label>
+                        <input class="form-input" id="method" type="text" value="否"/>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label class="form-label">保价</label>
+                        <input class="form-input" id="insured" type="text" value="无"/>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label class="form-label" for="remark">备注</label>
+                        <input id="remark" type="text" class="form-input" placeholder="请输入特殊要求，如大件“尽快来取”等"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!------ 选择快递区 ------>
     <div class="group">
         <div class="company">
             <h2 class="title">选择快递公司</h2>
             <div class="comp row">
-                <div class="col-xs-4 active">
+                <div class="col-xs-4">
+                    <div class="comp-item active">
+                        <div class="item-img">
+                            <img src="images/loading.png?v=76f4f1f42e" alt="顺丰标准"/>
+                        </div>
+                        <div class="item-info">
+                            <h3 class="item-title">顺丰标准</h3>
+                            <em class="item-price">¥22.00</em>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="comp-item">
+                        <div class="item-img">
+                            <img src="images/loading.png?v=76f4f1f42e" alt="圆通快递"/>
+                        </div>
+                        <div class="item-info">
+                            <h3 class="item-title">圆通快递</h3>
+                            <em class="item-price">¥12.00</em>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-4">
                     <div class="comp-item">
                         <div class="item-img">
                             <img src="images/loading.png?v=76f4f1f42e" alt="顺丰标准"/>
@@ -72,6 +155,17 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-xs-4">
+                    <div class="comp-item">
+                        <div class="item-img">
+                            <img src="images/loading.png?v=76f4f1f42e" alt="顺丰标准"/>
+                        </div>
+                        <div class="item-info">
+                            <h3 class="item-title">顺丰标准</h3>
+                            <em class="item-price">¥22.00</em>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -89,6 +183,6 @@
 <script type="text/javascript" src="libs/jquery.min.js"></script>
 <script type="text/javascript" src="libs/swiper-3.3.1.min.js"></script>
 <script type="text/javascript" src="js/tools.js?v=6679ce2559.js"></script>
-<script type="text/javascript" src="js/order.page.js?v=799bcb17ef"></script>
+<script type="text/javascript" src="js/order.page.js?v=452f944814"></script>
 </body>
 </html>
