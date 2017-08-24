@@ -60,13 +60,13 @@
             <div class="row">
                 <div class="col-xs-6">
                     <div class="form-group">
-                        <label class="form-label">包裹</label>
+                        <label class="form-label" data-target="modal" data-toggle="0">包裹</label>
                         <input class="form-input" id="wrap" type="text" value="文件"/>
                     </div>
                 </div>
                 <div class="col-xs-6">
                     <div class="form-group">
-                        <label class="form-label">重量</label>
+                        <label class="form-label" data-target="modal" data-toggle="1">重量</label>
                         <input class="form-input" id="weight" type="text" value="kg"/>
                     </div>
                 </div>
@@ -74,13 +74,13 @@
             <div class="row">
                 <div class="col-xs-6">
                     <div class="form-group">
-                        <label class="form-label">到付</label>
+                        <label class="form-label" data-target="modal" data-toggle="2">到付</label>
                         <input class="form-input" id="method" type="text" value="否"/>
                     </div>
                 </div>
                 <div class="col-xs-6">
                     <div class="form-group">
-                        <label class="form-label">保价</label>
+                        <label class="form-label" data-target="modal" data-toggle="3">保价</label>
                         <input class="form-input" id="insured" type="text" value="无"/>
                     </div>
                 </div>
@@ -178,6 +178,54 @@
             <a class="btn submit">提交订单</a>
         </div>
         <div class="clearfix"></div>
+    </div>
+    <!------ 重量模态框 ------>
+    <div class="modal hide">
+        <div class="modal-dialog">
+            <div class="modal-bg"></div>
+            <div class="modal-content">
+                <div class="modal-header"></div>
+                <div class="modal-body"></div>
+                <div class="modal-footer"></div>
+            </div>
+        </div>
+    </div>
+    <!------ 重量模态框 ------>
+    <div class="modal hide">
+        <div class="modal-dialog">
+            <div class="modal-bg"></div>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="btn close">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="attrs row">
+                        <div class="col-xs-4">
+                            <button class="btn item">1kg</button>
+                        </div>
+                        <div class="col-xs-4">
+                            <button class="btn item">1.5kg</button>
+                        </div>
+                        <div class="col-xs-4">
+                            <button class="btn item">2kg</button>
+                        </div>
+                        <div class="col-xs-4">
+                            <button class="btn item">其他</button>
+                        </div>
+                        <div class="col-xs-8">
+                            <button class="btn item">估算不出</button>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <input class="form-input" disabled="disabled" type="tel" placeholder="请填写物品重量"/>
+                                <button class="btn confirm">确定</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer"></div>
+            </div>
+        </div>
     </div>
 </div>
 <script type="text/javascript" src="libs/jquery.min.js"></script>

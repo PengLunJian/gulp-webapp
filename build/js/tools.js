@@ -267,3 +267,48 @@ NewsComponent.prototype.startMove = function () {
     }, _this.rate);
     return this;
 }
+/**
+ *
+ * @constructor
+ */
+function ModalComponent() {
+    var arguments = arguments.length != 0 ? arguments[0] : arguments;
+    this.element = arguments['element'] ? arguments['element'] : '.modal';
+    this.modalBg = arguments['modalBg'] ? arguments['modalBg'] : '.modal-bg';
+    this.btnClose = arguments['btnClose'] ? arguments['btnClose'] : '.btn.close';
+
+    this.init();
+}
+/**
+ *
+ * @returns {ModalComponent}
+ */
+ModalComponent.prototype.init = function () {
+    this.openModal();
+    this.closeModal();
+    return this;
+}
+/**
+ *
+ * @returns {ModalComponent}
+ */
+ModalComponent.prototype.openModal = function () {
+    var _this = this;
+    var TEMP_SELECTOR = '[data-target="modal"]';
+    $(document).on('click', TEMP_SELECTOR, function () {
+        var TEMP_INDEX = parseInt($(this).attr('data-toggle'));
+        $(_this.element).eq(TEMP_INDEX).removeClass('hide');
+    });
+    return this;
+}
+/**
+ * 
+ * @returns {ModalComponent}
+ */
+ModalComponent.prototype.closeModal = function () {
+    var TEMP_SELECTOR = this.btnClose + ',' + this.modalBg;
+    $(document).on('click', TEMP_SELECTOR, function () {
+        $(this).parents('.modal').addClass('hide');
+    });
+    return this;
+}
