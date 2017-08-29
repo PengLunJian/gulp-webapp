@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>新增收件地址</title>
+    <link href="css/swiper-3.3.1.min.css?v=1e85f8af85" rel="stylesheet" type="text/css">
+    <link href="css/font.css?v=240b33bd01" rel="stylesheet" type="text/css">
+    <link href="css/style.css?v=561569caba" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="addr">
+    <!------ 页头标题区 ------>
+    <div class="header">
+        <a href="#" class="btn back"></a>
+        <h1 class="title">新增寄件地址</h1>
+        <a class="btn clear">清空已填信息</a>
+    </div>
+    <!------ 地址信息区 ------>
+    <div class="group">
+        <div class="section">
+            <div class="form-group">
+                <label class="form-label" for="name">姓名：</label>
+                <input class="form-input" id="name" placeholder="请输入姓名"/>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="phone">手机号码：</label>
+                <input class="form-input" id="phone" placeholder="请输入手机号码"/>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="tell">固定电话：</label>
+                <input class="form-input" id="tell" placeholder="手机固话二填一"/>
+            </div>
+            <div class="form-block">
+                <a class="form-text">选联系人</a>
+            </div>
+        </div>
+        <div class="section">
+            <div class="form-group">
+                <label class="form-label" for="company">公司名称：</label>
+                <input class="form-input" id="company" placeholder="姓名公司二填一"/>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="area">所在地区：</label>
+                <input class="form-input" id="area" placeholder="请点击选择地区"/>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="address">详细地址：</label>
+                <input class="form-input" id="address" placeholder="请输入详细地址"/>
+            </div>
+        </div>
+    </div>
+    <!------ 详细信息区 ------>
+    <div class="group">
+        <div class="group-content">
+            <div class="group-header">
+                <p class="group-title">粘贴整段地址，自动识别姓名、电话、地址</p>
+            </div>
+            <div class="group-body">
+                <textarea class="form-area" placeholder="请长按此位置识别您要粘贴的内容"></textarea>
+            </div>
+            <div class="group-footer">
+                <button class="btn clear">清空</button>
+                <button class="btn write">智能填写</button>
+            </div>
+        </div>
+    </div>
+    <!------ 底部按钮区 ------>
+    <div class="footer">
+        <button class="btn confirm">提交</button>
+    </div>
+</div>
+<script type="text/javascript" src="libs/jquery.min.js"></script>
+<script type="text/javascript" src="libs/swiper-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/tools.js?v=f2e0ad7e2f.js"></script>
+<script type="text/javascript" src="js/address.page.js?v=46040e679e"></script>
+</body>
+</html>

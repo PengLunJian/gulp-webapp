@@ -302,7 +302,7 @@ ModalComponent.prototype.openModal = function () {
     return this;
 }
 /**
- * 
+ *
  * @returns {ModalComponent}
  */
 ModalComponent.prototype.closeModal = function () {

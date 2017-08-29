@@ -67,6 +67,10 @@ button {
   background-color: transparent;
 }
 
+textarea {
+  resize: none;
+}
+
 input:focus, textarea:focus, select:focus, button:focus {
   outline: none;
 }
@@ -1084,6 +1088,247 @@ input[type="checkbox"].checked, input[type="radio"].checked {
         padding: 0rem 0.15rem;
         background-color: @blue;
       }
+    }
+  }
+}
+
+.addr {
+  min-height: 100vh;
+  padding-bottom: 0.1rem;
+  .header {
+    background-color: @white;
+    .title {
+      color: @gray;
+      font-size: 0.18rem;
+    }
+    .btn {
+      position: absolute;
+      top: 0px;
+      height: 100%;
+      &.back {
+        left: 0px;
+        width: 0.45rem;
+        background-size: auto 0.3rem;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-image: url('../images/back@2x.png');
+      }
+      &.clear {
+        right: 0px;
+        color: #ff6a00;
+        font-size: 0.15rem;
+        padding: 0px 0.15rem;
+      }
+    }
+
+  }
+  .group {
+    margin-bottom: 0.1rem;
+    background-color: @white;
+    border-top: 1px solid @borderColor;
+    border-bottom: 1px solid @borderColor;
+    .section {
+      position: relative;
+      padding-left: 0.15rem;
+      &:nth-child(1) {
+        padding-right: 1.05rem;
+      }
+      &:nth-child(2) {
+        .form-group {
+          &:last-child {
+            border: none;
+          }
+        }
+      }
+    }
+    .form-group {
+      position: relative;
+      line-height: 0.45rem;
+      padding-left: 0.9rem;
+      border-bottom: 1px solid @borderColor;
+      .form-label {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 0.9rem;
+      }
+      .form-input {
+        width: 100%;
+        line-height: 0.2rem;
+        padding: 0.125rem 0.15rem 0.125rem 0rem;
+        &#area {
+          background-repeat: no-repeat;
+          background-size: auto 0.3rem;
+          background-position: right center;
+          background-image: url('../images/Arrow_Left@2x.png');
+        }
+      }
+    }
+    .form-block {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      width: 1.05rem;
+      height: 100%;
+      text-align: center;
+      line-height: 1.8rem;
+      border-left: 1px solid @borderColor;
+      border-bottom: 1px solid @borderColor;
+      .form-text {
+        height: 100%;
+        font-size: 0.13rem;
+      }
+    }
+    .group-content {
+      padding: 0rem 0.15rem;
+      .group-title {
+        font-size: 0.15rem;
+        line-height: 0.16rem;
+        padding: 0.15rem 0rem;
+      }
+      .form-area {
+        width: 100%;
+        height: 1.2rem;
+        display: block;
+        overflow-y: auto;
+        font-size: 0.15rem;
+        padding: 0.08rem 0.1rem;
+        background-color: @bgColor;
+        border: 1px solid @borderColor;
+        -webkit-overflow-scrolling: touch;
+      }
+      .group-footer {
+        font-size: 0px;
+        text-align: right;
+        padding: 0.1rem 0rem;
+      }
+      .btn {
+        width: 0.73rem;
+        color: #636363;
+        margin-left: 0.1rem;
+        line-height: 0.27rem;
+        display: inline-block;
+        -webkit-border-radius: 0.04rem;
+        -moz-border-radius: 0.04rem;
+        border-radius: 0.04rem;
+        border: 1px solid #919191;
+        &.write {
+          color: @white;
+          background-color: #ff6a00;
+          border-color: #ff6a00;
+        }
+      }
+    }
+  }
+  .footer {
+    position: relative;
+    box-shadow: none;
+    padding: 0.1rem 0.15rem;
+    background-color: @bgColor;
+    .btn.confirm {
+      width: 100%;
+      color: @white;
+      font-size: 0.17rem;
+      letter-spacing: 2px;
+      line-height: 0.45rem;
+      -webkit-border-radius: 0.04rem;
+      -moz-border-radius: 0.04rem;
+      border-radius: 0.04rem;
+      background-color: #00a0e9;
+    }
+  }
+}
+
+.sender {
+  min-height: 100vh;
+  padding-bottom: 0.65rem;
+  .header {
+    background-color: @white;
+    .back {
+      height: 100%;
+      width: 0.45rem;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      background-repeat: no-repeat;
+      background-size: 0.3rem auto;
+      background-position: center center;
+      background-image: url('../images/back@2x.png');
+    }
+    .title {
+      color: @gray;
+    }
+  }
+  .search {
+    padding: 0.1rem 0.15rem;
+    border-top: 1px solid @borderColor;
+    .form-input {
+      width: 100%;
+      display: block;
+      line-height: 0.2rem;
+      padding: 0.05rem 0.3rem;
+      border: 1px solid @borderColor;
+      -webkit-border-radius: 0.04rem;
+      -moz-border-radius: 0.04rem;
+      border-radius: 0.04rem;
+      background-repeat: no-repeat;
+      background-size: auto 0.3rem;
+      background-position: left center;
+      background-image: url("../images/search@2x.png");
+    }
+  }
+  .group {
+    .address {
+      margin-bottom: 0.1rem;
+      background-color: @white;
+      border-top: 1px solid @borderColor;
+      border-bottom: 1px solid @borderColor;
+      .address-body {
+        line-height: 0.3rem;
+        padding: 0.05rem 0.15rem;
+        span {
+          font-size: 0.15rem;
+          margin-right: 0.1rem;
+        }
+        p {
+          font-size: 0.13rem;
+        }
+      }
+      .address-footer {
+        font-size: 0px;
+        text-align: right;
+        padding: 0rem 0.15rem;
+        border-top: 1px solid @borderColor;
+        .btn {
+          font-size: 0.13rem;
+          line-height: 0.43rem;
+          display: inline-block;
+          background-repeat: no-repeat;
+          background-size: 0.3rem auto;
+          padding: 0rem 0rem 0rem 0.3rem;
+          background-position: left center;
+          &.edit {
+            background-image: url("../images/edit@2x.png");
+          }
+          &.delete {
+            background-image: url("../images/delete@2x.png");
+          }
+        }
+      }
+    }
+  }
+  .footer {
+    box-shadow: none;
+    padding: 0.1rem 0.15rem;
+    border-top: 1px solid @borderColor;
+    .btn.add {
+      color: @white;
+      font-size: 0.17rem;
+      line-height: 0.44rem;
+      background-color: @blue;
+      -webkit-border-radius: 0.04rem;
+      -moz-border-radius: 0.04rem;
+      border-radius: 0.04rem;
     }
   }
 }
