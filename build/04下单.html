@@ -8,7 +8,7 @@
     <title>下单</title>
     <link href="css/swiper-3.3.1.min.css?v=1e85f8af85" rel="stylesheet" type="text/css">
     <link href="css/font.css?v=240b33bd01" rel="stylesheet" type="text/css">
-    <link href="css/style.css?v=561569caba" rel="stylesheet" type="text/css">
+    <link href="css/style.css?v=a7ebe12f5a" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div class="order">
@@ -37,7 +37,7 @@
     <!------ 收寄信息区 ------>
     <div class="group">
         <div class="address">
-            <div class="addr-item">
+            <div class="addr-item href">
                 <a href="javascript:void(0);">
                     <p class="addr-line ellipsis">郭天天 18717747137</p>
                     <p class="addr-line ellipsis">上海小马驿站科技有限公司</p>
@@ -45,7 +45,7 @@
                     <i class="addr-split"></i>
                 </a>
             </div>
-            <div class="addr-item">
+            <div class="addr-item href">
                 <a href="javascript:void(0);">
                     <p class="addr-line ellipsis">郭天天 18717747137</p>
                     <p class="addr-line ellipsis">上海小马驿站科技有限公司</p>
@@ -60,13 +60,17 @@
             <div class="row">
                 <div class="col-xs-6">
                     <div class="form-group">
-                        <label class="form-label" data-target="modal" data-toggle="0">包裹</label>
+                        <label class="form-label href" data-target="modal" data-toggle="0">
+                            <span class="form-span">包裹</span>
+                        </label>
                         <input class="form-input" id="wrap" type="text" value="文件"/>
                     </div>
                 </div>
                 <div class="col-xs-6">
                     <div class="form-group">
-                        <label class="form-label" data-target="modal" data-toggle="1">重量</label>
+                        <label class="form-label href" data-target="modal" data-toggle="1">
+                            <span class="form-span">重量</span>
+                        </label>
                         <input class="form-input" id="weight" type="text" value="kg"/>
                     </div>
                 </div>
@@ -74,13 +78,17 @@
             <div class="row">
                 <div class="col-xs-6">
                     <div class="form-group">
-                        <label class="form-label" data-target="modal" data-toggle="2">到付</label>
+                        <label class="form-label href" data-target="modal" data-toggle="2">
+                            <span class="form-span">到付</span>
+                        </label>
                         <input class="form-input" id="method" type="text" value="否"/>
                     </div>
                 </div>
                 <div class="col-xs-6">
                     <div class="form-group">
-                        <label class="form-label" data-target="modal" data-toggle="3">保价</label>
+                        <label class="form-label href" data-target="modal" data-toggle="3">
+                            <span class="form-span">保价</span>
+                        </label>
                         <input class="form-input" id="insured" type="text" value="无"/>
                     </div>
                 </div>
@@ -88,7 +96,9 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="form-group">
-                        <label class="form-label" for="remark">备注</label>
+                        <label class="form-label" for="remark">
+                            <span class="form-span">备注</span>
+                        </label>
                         <input id="remark" type="text" class="form-input" placeholder="请输入特殊要求，如大件“尽快来取”等"/>
                     </div>
                 </div>

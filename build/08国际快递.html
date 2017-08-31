@@ -8,7 +8,7 @@
     <title>下单</title>
     <link href="css/swiper-3.3.1.min.css?v=1e85f8af85" rel="stylesheet" type="text/css">
     <link href="css/font.css?v=240b33bd01" rel="stylesheet" type="text/css">
-    <link href="css/style.css?v=561569caba" rel="stylesheet" type="text/css">
+    <link href="css/style.css?v=a7ebe12f5a" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div class="order">
@@ -37,7 +37,7 @@
     <!------ 收寄信息区 ------>
     <div class="group">
         <div class="address">
-            <div class="addr-item">
+            <div class="addr-item href">
                 <a href="javascript:void(0);">
                     <p class="addr-line ellipsis">郭天天 18717747137</p>
                     <p class="addr-line ellipsis">上海小马驿站科技有限公司</p>
@@ -45,7 +45,7 @@
                     <i class="addr-split"></i>
                 </a>
             </div>
-            <div class="addr-item">
+            <div class="addr-item href">
                 <a href="javascript:void(0);">
                     <p class="addr-line ellipsis">郭天天 18717747137</p>
                     <p class="addr-line ellipsis">上海小马驿站科技有限公司</p>
@@ -60,22 +60,130 @@
             <div class="row">
                 <div class="col-xs-6">
                     <div class="form-group">
-                        <label class="form-label" data-target="modal" data-toggle="0">包裹</label>
+                        <label class="form-label href" data-target="modal" data-toggle="0">
+                            <span class="form-span">物品<em>Goods</em></span>
+                        </label>
                         <input class="form-input" id="wrap" type="text" value="文件"/>
                     </div>
                 </div>
                 <div class="col-xs-6">
                     <div class="form-group">
-                        <label class="form-label" data-target="modal" data-toggle="1">重量</label>
-                        <input class="form-input" id="weight" type="text" value="kg"/>
+                        <label class="form-label href" data-target="modal" data-toggle="1">
+                            <span class="form-span">重量<em>weight</em></span>
+                        </label>
+                        <input class="form-input" id="weight" type="text" value="1kg"/>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-12">
                     <div class="form-group">
-                        <label class="form-label" for="remark">备注</label>
-                        <input id="remark" type="text" class="form-input" placeholder="请输入特殊要求，如大件“尽快来取”等"/>
+                        <label class="form-label href" data-target="modal" data-toggle="2">
+                            <span class="form-span">发票类型<em>Invoice type</em></span>
+                        </label>
+                        <div class="form-label form-msg">
+                            <span class="form-span">请选择发票类型<em>Please select the invoice type</em></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label class="form-label" for="remark">
+                            <span class="form-span">备注<em>Remarks</em></span>
+                        </label>
+                        <div class="form-mark">
+                            <input id="remark" type="text" class="form-input font-zh" placeholder="请输入备注内容"/>
+                            <span class="font-en">Please enter the memo content</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!------ 包裹详情区 ------>
+    <div class="group">
+        <div class="params detail">
+            <div class="form-group">
+                <label class="form-label">
+                    <span class="form-span">包裹详情 ( <b>申报价值：¥100</b> ) <em>Parcel details</em></span>
+                </label>
+                <a href="javascript:void(0);" data-target="modal" data-toggle="3" class="btn add"></a>
+            </div>
+            <div class="detial-item">
+                <div class="detail-group">
+                    <span class="detail-list">xigua</span>
+                    <span class="detail-list">2pcs</span>
+                    <span class="detail-list">20kg</span>
+                </div>
+                <div class="detail-group">
+                    <span class="detail-list">300usd</span>
+                    <span class="detail-list">asian</span>
+                </div>
+                <a href="javascript:void(0);" class="btn del"></a>
+            </div>
+            <div class="detial-item">
+                <div class="detail-group">
+                    <span class="detail-list">xigua</span>
+                    <span class="detail-list">2pcs</span>
+                    <span class="detail-list">20kg</span>
+                </div>
+                <div class="detail-group">
+                    <span class="detail-list">300usd</span>
+                    <span class="detail-list">asian</span>
+                </div>
+                <a href="javascript:void(0);" class="btn del"></a>
+            </div>
+        </div>
+    </div>
+    <!------ 选择快递区 ------>
+    <div class="group">
+        <div class="company">
+            <h2 class="title">选择快递公司</h2>
+            <div class="comp row">
+                <div class="col-xs-6">
+                    <div class="comp-item active">
+                        <div class="item-img">
+                            <img src="images/loading.png?v=76f4f1f42e" alt="顺丰标准"/>
+                        </div>
+                        <div class="item-info">
+                            <h3 class="item-title">顺丰标准</h3>
+                            <em class="item-price">¥22.00</em>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="comp-item">
+                        <div class="item-img">
+                            <img src="images/loading.png?v=76f4f1f42e" alt="圆通快递"/>
+                        </div>
+                        <div class="item-info">
+                            <h3 class="item-title">圆通快递</h3>
+                            <em class="item-price">¥12.00</em>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="comp-item">
+                        <div class="item-img">
+                            <img src="images/loading.png?v=76f4f1f42e" alt="顺丰标准"/>
+                        </div>
+                        <div class="item-info">
+                            <h3 class="item-title">顺丰标准</h3>
+                            <em class="item-price">¥22.00</em>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="comp-item">
+                        <div class="item-img">
+                            <img src="images/loading.png?v=76f4f1f42e" alt="圆通快递"/>
+                        </div>
+                        <div class="item-info">
+                            <h3 class="item-title">圆通快递</h3>
+                            <em class="item-price">¥12.00</em>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -91,9 +199,9 @@
         </div>
         <div class="clearfix"></div>
     </div>
-    <!------ 重量模态框 ------>
+    <!------ 物品模态框 ------>
     <div class="modal hide">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-A">
             <div class="modal-bg"></div>
             <div class="modal-content">
                 <div class="modal-header">
@@ -133,7 +241,7 @@
     </div>
     <!------ 重量模态框 ------>
     <div class="modal hide">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-B">
             <div class="modal-bg"></div>
             <div class="modal-content">
                 <div class="modal-header">
@@ -165,6 +273,98 @@
                     </div>
                 </div>
                 <div class="modal-footer"></div>
+            </div>
+        </div>
+    </div>
+    <!------ 发票模态框 ------>
+    <div class="modal hide">
+        <div class="modal-dialog modal-C">
+            <div class="modal-bg"></div>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="btn close">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="attrs row">
+                        <div class="col-xs-6">
+                            <button class="btn item">
+                                <span class="font-zh">商业发票</span>
+                                <span class="font-en">Commercial Incoive</span>
+                            </button>
+                        </div>
+                        <div class="col-xs-6">
+                            <button class="btn item">
+                                <span class="font-zh">形式发票</span>
+                                <span class="font-en">Proforma Incoive</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer"></div>
+            </div>
+        </div>
+    </div>
+    <!------ 包裹模态框 ------>
+    <div class="modal hide">
+        <div class="modal-dialog modal-D">
+            <div class="modal-bg"></div>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">添加包裹详情</h2>
+                    <button class="btn close">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="params">
+                        <div class="form-group">
+                            <label class="form-label">
+                                <span class="form-span">内件品名：<em>Item name</em></span>
+                            </label>
+                            <div class="form-mark">
+                                <input type="text" class="form-input font-zh" placeholder="请输入内件品名">
+                                <span class="font-en">Plcase enter a name</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">
+                                <span class="form-span">件数：<em>No.ofpcs</em></span>
+                            </label>
+                            <div class="form-mark">
+                                <input type="text" class="form-input font-zh" placeholder="请输入备注内容">
+                                <span class="font-en">Please enter the memo content</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">
+                                <span class="form-span">重量(KG)：<em>Weight</em></span>
+                            </label>
+                            <div class="form-mark">
+                                <input type="text" class="form-input font-zh" placeholder="请输入重量">
+                                <span class="font-en">Plcase enter weight</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">
+                                <span class="form-span">单品价值(USD)：<em>Single Value</em></span>
+                            </label>
+                            <div class="form-mark">
+                                <input type="text" class="form-input font-zh" placeholder="请输入单品价格">
+                                <span class="font-en">Plcase enter the value of singgle product</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">
+                                <span class="form-span">原产地：<em>Origin</em></span>
+                            </label>
+                            <div class="form-mark">
+                                <input type="text" class="form-input font-zh" placeholder="请输入原产地">
+                                <span class="font-en">Plcase enter the country of origin</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="javascript:void(0);" class="btn save">保存</a>
+                </div>
             </div>
         </div>
     </div>
