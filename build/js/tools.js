@@ -312,3 +312,51 @@ ModalComponent.prototype.closeModal = function () {
     });
     return this;
 }
+/**
+ *
+ * @constructor
+ */
+function OrderComponent() {
+    var arguments = arguments.length != 0 ? arguments[0] : arguments;
+    this.btnPlus = arguments['btnPlus'] ? arguments['btnPlus'] : '.btn.plus';
+    this.btnReduce = arguments['btnReduce'] ? arguments['btnReduce'] : '.btn.reduce';
+    this.complete = arguments['complete'] ? arguments['complete'] : function () {
+    };
+
+    this.init();
+}
+
+OrderComponent.prototype.init = function () {
+    this.plus();
+    this.reduce();
+    return this;
+}
+/**
+ *
+ * @returns {OrderComponent}
+ */
+OrderComponent.prototype.plus = function () {
+    var _this = this;
+    $(document).on('click', this.btnPlus, function () {
+        var TEMP_NUMBER = $(this).prev();
+        var TEMP_COUNT = parseInt(TEMP_NUMBER.val());
+        TEMP_COUNT++;
+        TEMP_NUMBER.val(TEMP_COUNT);
+        if ('function' == typeof _this.complete) _this.complete();
+    });
+    return this;
+}
+/**
+ *
+ */
+OrderComponent.prototype.reduce = function () {
+    var _this = this;
+    $(document).on('click', this.btnReduce, function () {
+        var TEMP_NUMBER = $(this).next();
+        var TEMP_COUNT = parseInt(TEMP_NUMBER.val());
+        TEMP_COUNT--;
+        TEMP_COUNT = TEMP_COUNT <= 1 ? 1 : TEMP_COUNT;
+        TEMP_NUMBER.val(TEMP_COUNT);
+        if ('function' == typeof _this.complete) _this.complete();
+    });
+}

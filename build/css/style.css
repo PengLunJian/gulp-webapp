@@ -398,6 +398,37 @@ col-lg-3 {
   position: relative;
   z-index: 2;
 }
+.modal .modal-D .modal-content .modal-body .params .form-group .form-number {
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  font-size: 0px;
+  text-align: left;
+  line-height: 0.59rem;
+}
+.modal .modal-D .modal-content .modal-body .params .form-group .form-number .btn {
+  width: 0.3rem;
+  height: 0.3rem;
+  display: inline-block;
+  vertical-align: middle;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.modal .modal-D .modal-content .modal-body .params .form-group .form-number .btn.plus {
+  background-image: url("../images/add@2x.png");
+}
+.modal .modal-D .modal-content .modal-body .params .form-group .form-number .btn.reduce {
+  background-image: url("../images/Subtract@2x.png");
+}
+.modal .modal-D .modal-content .modal-body .params .form-group .form-number #number {
+  padding: 0px;
+  width: 0.3rem;
+  height: 0.3rem;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+}
 .modal .modal-D .modal-content .modal-footer {
   position: absolute;
   left: 0px;

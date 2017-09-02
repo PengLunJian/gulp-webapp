@@ -8,7 +8,7 @@
     <title>下单</title>
     <link href="css/swiper-3.3.1.min.css?v=1e85f8af85" rel="stylesheet" type="text/css">
     <link href="css/font.css?v=240b33bd01" rel="stylesheet" type="text/css">
-    <link href="css/style.css?v=a7ebe12f5a" rel="stylesheet" type="text/css">
+    <link href="css/style.css?v=9851ba027d" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div class="order">
@@ -328,9 +328,10 @@
                             <label class="form-label">
                                 <span class="form-span">件数：<em>No.ofpcs</em></span>
                             </label>
-                            <div class="form-mark">
-                                <input type="text" class="form-input font-zh" placeholder="请输入备注内容">
-                                <span class="font-en">Please enter the memo content</span>
+                            <div class="form-number">
+                                <a href="javascript:void(0);" class="btn reduce"></a>
+                                <input type="number" id="number" readonly="readonly" value="1"/>
+                                <a href="javascript:void(0);" class="btn plus"></a>
                             </div>
                         </div>
                         <div class="form-group">
@@ -371,7 +372,7 @@
 </div>
 <script type="text/javascript" src="libs/jquery.min.js"></script>
 <script type="text/javascript" src="libs/swiper-3.3.1.min.js"></script>
-<script type="text/javascript" src="js/tools.js?v=f2e0ad7e2f.js"></script>
-<script type="text/javascript" src="js/order.page.js?v=1aa6db8878"></script>
+<script type="text/javascript" src="js/tools.js?v=18af4033b8.js"></script>
+<script type="text/javascript" src="js/order.page.js?v=42f8dc9eba"></script>
 </body>
 </html>

@@ -19,7 +19,6 @@ function OrderPage() {
  * @returns {OrderPage} 返回当前对象实现连缀调用
  */
 OrderPage.prototype.init = function () {
-
     this.selectExpressItem();
     this.selectCompanyItem();
     this.selectBtnItem();
@@ -30,8 +29,20 @@ OrderPage.prototype.init = function () {
      * @type {Lazyload}
      */
     var lazy = new Lazyload();
-
+    /**
+     *
+     * @type {ModalComponent}
+     */
     var modal = new ModalComponent();
+    /**
+     *
+     * @type {OrderComponent}
+     */
+    var order = new OrderComponent({
+        complete: function () {
+            console.log('SUCCESS');
+        }
+    });
 }
 /**
  *
