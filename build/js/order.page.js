@@ -10,6 +10,8 @@ function OrderPage() {
     this.expItem = arguments['expItem'] ? arguments['expItem'] : '.exp-item';
     this.btnItem = arguments['btnItem'] ? arguments['btnItem'] : '.btn.item';
     this.compItem = arguments['compItem'] ? arguments['compItem'] : '.comp-item';
+    this.radioItem = arguments['radioItem'] ? arguments['radioItem'] : '.radio-item';
+
     this.init();
 }
 /**
@@ -22,6 +24,7 @@ OrderPage.prototype.init = function () {
     this.selectExpressItem();
     this.selectCompanyItem();
     this.selectBtnItem();
+    this.selectRadioItem();
     /**
      * BEGIN 实例化延时加载插件
      * Author:PengLunJian
@@ -76,6 +79,19 @@ OrderPage.prototype.selectBtnItem = function () {
     var _this = this;
     $(document).on('click', this.btnItem, function () {
         $(_this.btnItem).removeClass(_this.active);
+        $(this).addClass(_this.active);
+    });
+    return this;
+}
+/**
+ *
+ * @returns {OrderPage}
+ */
+OrderPage.prototype.selectRadioItem = function () {
+    var _this = this;
+    $(document).on('click', this.radioItem, function () {
+        var RADIO_ITEMS = $(this).parent().find(_this.radioItem);
+        RADIO_ITEMS.removeClass(_this.active);
         $(this).addClass(_this.active);
     });
     return this;

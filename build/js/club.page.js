@@ -6,7 +6,9 @@
  */
 function ClubPage() {
     var arguments = arguments.length != 0 ? arguments[0] : arguments;
-    this.banner = arguments['banner'] ? arguments['banner'] : '.swiper-container';
+    this.banner = arguments['banner'] ? arguments['banner'] : '.banner';
+    this.swiperBar = arguments['swiperBar'] ? arguments['swiperBar'] : '.swiper-bar';
+
     this.init();
 }
 /**
@@ -21,12 +23,21 @@ ClubPage.prototype.init = function () {
      * Author:PengLunJian
      * Date:2017-08-23
      */
-    var swiper = new Swiper(this.banner, {
+    var swiperBanner = new Swiper(this.banner, {
         autoplay: 2000,
         loop: true,
         initialSlide: 0,
         pagination: '.swiper-pagination',
         autoplayDisableOnInteraction: false,
+    });
+    /**
+     *
+     */
+    var swiperBar = new Swiper(this.swiperBar, {
+        freeMode: true,
+        slidesPerView: 'auto',
+        observer: true,//修改swiper自己或子元素时，自动初始化swiper
+        observeParents: true,//修改swiper的父元素时，自动初始化swiper
     });
     /**
      * BEGIN 实例化延时加载插件
@@ -35,6 +46,20 @@ ClubPage.prototype.init = function () {
      * @type {Lazyload}
      */
     var lazy = new Lazyload();
+    /**
+     *
+     * @type {ModalComponent}
+     */
+    var modal = new ModalComponent();
+    /**
+     *
+     * @type {TabComponent}
+     */
+    var tab = new TabComponent({
+        complete: function () {
+            console.log('Tab Change Success');
+        }
+    })
 }
 /**
  * BEGIN 实例化首页插件

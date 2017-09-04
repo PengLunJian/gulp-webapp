@@ -297,6 +297,7 @@ ModalComponent.prototype.openModal = function () {
     var TEMP_SELECTOR = '[data-target="modal"]';
     $(document).on('click', TEMP_SELECTOR, function () {
         var TEMP_INDEX = parseInt($(this).attr('data-toggle'));
+        $(_this.element).addClass('hide');
         $(_this.element).eq(TEMP_INDEX).removeClass('hide');
     });
     return this;
@@ -325,7 +326,10 @@ function OrderComponent() {
 
     this.init();
 }
-
+/**
+ *
+ * @returns {OrderComponent}
+ */
 OrderComponent.prototype.init = function () {
     this.plus();
     this.reduce();
@@ -348,6 +352,7 @@ OrderComponent.prototype.plus = function () {
 }
 /**
  *
+ * @returns {OrderComponent}
  */
 OrderComponent.prototype.reduce = function () {
     var _this = this;
@@ -359,4 +364,42 @@ OrderComponent.prototype.reduce = function () {
         TEMP_NUMBER.val(TEMP_COUNT);
         if ('function' == typeof _this.complete) _this.complete();
     });
+    return this;
 }
+/**
+ *
+ * @constructor
+ */
+function TabComponent() {
+    var arguments = arguments.length != 0 ? arguments[0] : arguments;
+    this.active = arguments['active'] ? arguments['active'] : 'active';
+    this.element = arguments['element'] ? arguments['element'] : '.tab';
+    this.complete = arguments['complete'] ? arguments['complete'] : function () {
+
+    }
+
+    this.init();
+}
+/**
+ *
+ * @returns {TabComponent}
+ */
+TabComponent.prototype.init = function () {
+    this.tabTouch();
+    return this;
+}
+/**
+ *
+ * @returns {TabComponent}
+ */
+TabComponent.prototype.tabTouch = function () {
+    var _this = this;
+    $(document).on('click', this.element, function () {
+        $(_this.element).removeClass(_this.active);
+        $(this).addClass(_this.active);
+
+        if ('function' == typeof _this.complete) _this.complete();
+    });
+    return this;
+}
+
