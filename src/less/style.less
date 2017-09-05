@@ -1947,3 +1947,170 @@ input[type="checkbox"].checked, input[type="radio"].checked {
     }
   }
 }
+
+.mine {
+  min-height: 100vh;
+  padding-bottom: 0.7rem;
+  .person {
+    height: 1.62rem;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url('../images/bg@2x.png');
+    .title {
+      color: @white;
+      font-size: 0.18rem;
+      text-align: center;
+      font-weight: normal;
+      line-height: 0.45rem;
+    }
+    .user {
+      position: relative;
+      padding: 0.05rem 0.15rem;
+      .user-logo {
+        float: left;
+        width: 0.7rem;
+        height: 0.7rem;
+        overflow: hidden;
+        -webkit-border-radius: 100%;
+        -moz-border-radius: 100%;
+        border-radius: 100%;
+        border: 0.02rem solid #a5caf2;
+      }
+      .user-info {
+        float: left;
+        color: @white;
+        font-size: 0px;
+        line-height: 0.17rem;
+        padding: 0.11rem 0.1rem;
+        .user-name {
+          font-size: 0.17rem;
+          display: inline-block;
+          vertical-align: middle;
+          margin-right: 0.06rem;
+        }
+        .user-live {
+          width: 0.75rem;
+          height: 0.17rem;
+          display: inline-block;
+          font-size: 0.11rem;
+          text-align: center;
+          line-height: 0.17rem;
+          padding-left: 0.15rem;
+          vertical-align: middle;
+          background-color: #0352a7;
+          -webkit-border-radius: 0.17rem;
+          -moz-border-radius: 0.17rem;
+          border-radius: 0.17rem;
+          background-size: auto 140%;
+          background-repeat: no-repeat;
+          background-position: left center;
+          background-image: url("../images/live@2x.png")
+        }
+        .user-phone {
+          font-size: 0.15rem;
+          margin-top: 0.14rem;
+        }
+      }
+    }
+  }
+  .group {
+    margin-bottom: 0.15rem;
+    .state {
+      font-size: 0.12rem;
+      text-align: center;
+      line-height: 0.1rem;
+      .col-xs-3 {
+        a {
+          position: relative;
+          padding: 0.12rem 0rem;
+          .item-img {
+            width: 0.3rem;
+            height: 0.3rem;
+            position: relative;
+            margin: 0px auto 0.06rem;
+            .item-nums {
+              display: block;
+              height: 0.2rem;
+              min-width: 0.2rem;
+              position: absolute;
+              top: -0.06rem;
+              right: -0.08rem;
+              color: #ff1402;
+              font-size: 0.12rem;
+              text-align: center;
+              line-height: 0.18rem;
+              background-color: @white;
+              border: 0.01rem solid #ff1402;
+              -webkit-border-radius: 0.2rem;
+              -moz-border-radius: 0.2rem;
+              border-radius: 0.2rem;
+            }
+          }
+        }
+        &:last-child {
+          a {
+            border-left: 1px solid @borderColor;
+            &:after {
+              content: '';
+              display: block;
+              width: 0.1rem;
+              height: 0.1rem;
+              position: absolute;
+              top: 50%;
+              left: -0.06rem;
+              margin-top: -0.05rem;
+              background-color: @white;
+              border-top: 1px solid @borderColor;
+              border-right: 1px solid @borderColor;
+              -webkit-transform: rotate(45deg);
+              -moz-transform: rotate(45deg);
+              -ms-transform: rotate(45deg);
+              -o-transform: rotate(45deg);
+              transform: rotate(45deg);
+            }
+          }
+        }
+      }
+    }
+    .price {
+      text-align: center;
+      line-height: 0.2rem;
+      padding: 0.2rem 0rem;
+      em {
+        color: #ff1402;
+        font-size: 0.17rem;
+      }
+      p {
+        font-size: 0.12rem;
+      }
+    }
+    .param {
+      font-size: 0.15rem;
+      line-height: 0.45rem;
+      padding-left: 0.15rem;
+      .form-group {
+        border-bottom: 1px solid @borderColor;
+        a {
+          padding-left: 0.3rem;
+          background-size: auto 0.3rem;
+          background-repeat: no-repeat;
+          background-position: -0.05rem center;
+        }
+        &:last-child {
+          border: none;
+        }
+        &:nth-child(1) {
+          a {
+            background-image: url('../images/address@2x.png');
+          }
+        }
+        &:nth-child(2) {
+          a {
+            background-image: url('../images/Set@2x.png');
+          }
+        }
+      }
+    }
+  }
+}
